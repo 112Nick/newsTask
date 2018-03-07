@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             ArticleListFragment list = new ArticleListFragment();
-            transaction.add(R.id.container, list);
+            transaction.replace(R.id.container, list);
             transaction.commit();
             list.setOnArticleClickListener(new OnArticleClickListener() {
                 @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             });
         } else {
             ArticleListFragment list = new ArticleListFragment();
-            transaction.add(R.id.containerList, list);
+            transaction.replace(R.id.containerList, list);
             transaction.commit();
             list.setOnArticleClickListener(new OnArticleClickListener() {
                 @Override
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     ArticleFragment articleFragment = new ArticleFragment();
                     articleFragment.setArguments(bundle);
                     final FragmentTransaction transaction2 = manager.beginTransaction();
-                    transaction2.add(R.id.containerArticle, articleFragment);
+                    transaction2.replace(R.id.containerArticle, articleFragment);
                     transaction2.commit();
                 }
             });
